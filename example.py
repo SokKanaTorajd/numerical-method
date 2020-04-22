@@ -1,4 +1,4 @@
-from pprint import pprint
+ from pprint import pprint
 import numpy as np
 
 def jacobi(A, b, x=None, tol=None, n=None):
