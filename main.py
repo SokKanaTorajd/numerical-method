@@ -59,7 +59,7 @@ for i in range(0,6):
 	x3=list_x3[len(list_x3)-1]
 
 	find_x1(a, b, x2=x2, x3=x3)
-	find_x2(a, b, x1=x2, x3=x3)
+	find_x2(a, b, x1=x1, x3=x3)
 	find_x3(a, b, x1=x1, x2=x2)
 
 	x11 = error_approximate(list_x1)
