@@ -1,6 +1,6 @@
 import numpy as np
 
-def seidle(a, x, b):
+def seidel(a, x, b):
 	n = len(a)
 
 	for i in range(0, n):
