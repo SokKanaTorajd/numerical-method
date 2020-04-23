@@ -35,15 +35,14 @@ def error_approximate(x):
 	new = x[len(x)-1]
 	prev = x[len(x)-2]
 
-	error_value = np.abs((new - prev) / new)
+	error_value = round(np.abs(((new - prev) / new)*100),3)
 
 	return error_value
 
 list_x1 = [0]
 list_x2 = [0]
 list_x3 = [0]
-
-err_list = []
+error_list = []
 
 a = [
 		[5, -2, 3], 
@@ -62,18 +61,18 @@ for i in range(0,6):
 	find_x2(a, b, x1=x1, x3=x3)
 	find_x3(a, b, x1=x1, x2=x2)
 
-	x11 = error_approximate(list_x1)
-	x22 = error_approximate(list_x2)
-	x33 = error_approximate(list_x3)
+	ea1 = error_approximate(list_x1)
+	ea2 = error_approximate(list_x2)
+	ea3 = error_approximate(list_x3)
 
-	err_list.append([x11, x22, x33])
+	error_list.append([ea1, ea2, ea3])
 
-	array = np.column_stack([list_x1,list_x2,list_x3])
+	jacobi = np.column_stack([list_x1,list_x2,list_x3])
 
 	print('Iteration: %s finished'%i)
 	i+=1
 
 print()
-print(array)
+print(jacobi)
 print()
-print(err_list)
+print(error_list)
